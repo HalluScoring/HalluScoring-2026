@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap');
+
+html,
+body,
+#root {
+	margin: 0;
+	min-height: 100%;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+body {
+	font-family: 'Lexend', 'Segoe UI', sans-serif;
+	font-size: clamp(17px, 1vw + 14px, 19px);
+	line-height: 1.7;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
