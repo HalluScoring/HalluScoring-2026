@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b74be" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#10a3c8" stop-opacity="0.95" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <g fill="rgba(255,255,255,0.12)">
+    <circle cx="220" cy="160" r="120" />
+    <circle cx="360" cy="340" r="90" />
+    <circle cx="140" cy="520" r="70" />
+  </g>
+  <g transform="translate(520,160)" fill="rgba(255,255,255,0.14)">
+    <rect x="0" y="0" width="620" height="480" rx="28"/>
+  </g>
+  <text x="80" y="680" fill="rgba(255,255,255,0.18)" font-family="sans-serif" font-size="28">HalluScoring</text>
+</svg>
