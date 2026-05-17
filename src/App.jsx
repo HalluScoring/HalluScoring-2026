@@ -160,7 +160,7 @@ function App() {
         </p>
       </section>
 
-      <section className="content-section" aria-labelledby="description-title">
+      {/* <section className="content-section" aria-labelledby="description-title">
         <h2 id="description-title" className="centered section-heading heading-center-fix">Shared Task Description</h2>
 
         <article className="shared-task-card">
@@ -238,7 +238,7 @@ function App() {
           </div>
         </article>
 
-      </section>
+      </section> */}
 
       <section className="content-section" aria-labelledby="dates-title">
         <h2 id="dates-title" className="centered section-heading heading-center-fix">Important Dates</h2>
