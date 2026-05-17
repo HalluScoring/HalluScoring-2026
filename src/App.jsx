@@ -1,14 +1,105 @@
 import './App.css'
-import { useMemo, useState } from 'react'
-import logoImg from './assets/logo.jpg'
+import { useMemo, useState, useEffect } from 'react'
 import hamzahImg from './assets/HamzahLuqman.jpeg'
 import saadImg from './assets/saadEzzini.jpeg'
 import ahmedImg from './assets/AhmedHasanaath.JPG'
-import hendImg from './assets/HendAlkhalifa.jpeg'
 import muhammadImg from './assets/MuhammadAbdulMageed.jpg'
+import bouchImg from './assets/salah_bouch.jpg'
+import aishaImg from './assets/aisha.jpeg'
+
+const sharedTaskDescriptionData = {
+  tracks: [
+    {
+      trackLabel: 'Track 1',
+      title: 'HalluScoring',
+      description:
+        'Model-agnostic hallucination detection for Arabic QA using only input-output signals and robust cross-model evaluation.',
+      buttons: [
+        { label: 'Starter Kit', href: '#' , variant: 'starter' },
+        { label: 'Task 1', href: '#', variant: 'task' },
+        { label: 'Task 2', href: '#', variant: 'task' },
+      ],
+    },
+    {
+      trackLabel: 'Track 2',
+      title: 'ANDALUS',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      buttons: [
+        { label: 'Starter Kit', href: '#', variant: 'starter' },
+        { label: 'Task', href: '#', variant: 'task' },
+      ],
+    },
+  ],
+}
+
+const datasetDescriptionData = {
+  tracks: [
+    {
+      trackLabel: 'Track 1',
+      title: 'HalluScoring Dataset',
+      description:
+        'The HalluScore dataset is a structured Arabic QA benchmark with 827 curated QA pairs across health, science, finance, religion, and geography. Responses from 17 Arabic, multilingual, and reasoning LLMs are manually annotated with hallucination labels, verified evidence, answer explanations, and fine-grained metadata.',
+      detailsLink: 'https://drive.google.com/drive/folders/1ElvlVJ8sz_ZwZhmyY-rrY2njzeejBWbk?usp=sharing',
+    },
+    {
+      trackLabel: 'Track 2',
+      title: 'ANDALUS Dataset',
+      description:
+        'The shared task dataset supports Arabic MCQ and QA evaluation with training and development splits plus a hidden test set for fair evaluation. It is currently around 90% complete for Task 1 and 75% complete for Task 2, with final validation, balancing, annotation completion, and packaging still underway.',
+    },
+  ],
+}
+
+function useScrollReveal(dependency) {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    const elements = document.querySelectorAll('.content-section, .timeline-item, .organizer-card')
+    elements.forEach((el) => {
+      observer.observe(el)
+    })
+
+    return () => {
+      elements.forEach((el) => {
+        observer.unobserve(el)
+      })
+    }
+  }, [dependency])
+}
 
 function App() {
   const [activeItem, setActiveItem] = useState('Home')
+  useScrollReveal(activeItem)
+  const today = useMemo(() => {
+    const current = new Date()
+    current.setHours(0, 0, 0, 0)
+    return current
+  }, [])
+
+  const getDateStatus = (compareDate) => {
+    const eventDate = new Date(`${compareDate}T00:00:00`)
+
+    if (eventDate < today) {
+      return 'past'
+    }
+
+    if (eventDate > today) {
+      return 'future'
+    }
+
+    return 'today'
+  }
 
   const floatingParticles = useMemo(
     () =>
@@ -48,6 +139,7 @@ function App() {
         email: 'aisha.ansari@kfupm.edu.sa',
         affiliation: 'KFUPM, Saudi Arabia',
         initials: 'AA',
+        avatar: aishaImg,
       },
       {
         name: 'Saad Ezzini',
@@ -73,7 +165,6 @@ function App() {
         name: 'Hend Al-Khalifa',
         email: 'hendk@ksu.edu.sa',
         affiliation: 'KSU, Saudi Arabia',
-        initials: 'HK',
         initials: "HA",
       },
       {
@@ -99,7 +190,7 @@ function App() {
         name: 'Dr. Salah Eddine Bekhouche',
         email: '',
         affiliation: 'University of the Basque Country, Spain',
-        initials: 'SE',
+        avatar: bouchImg,
       },
       {
         name: 'Dr. Abdessalam Bouchekif',
@@ -125,13 +216,37 @@ function App() {
 
   const importantDates = useMemo(
     () => [
-      { label: 'Release of Task Website, Training/Dev Data & Evaluation Scripts', date: 'May 16, 2026' },
-      { label: 'Registration Deadline & Blind Test Data Release', date: 'July 20, 2026' },
-      { label: 'Final Results Released', date: 'July 30, 2026' },
-      { label: 'Camera-ready System Description Papers Due', date: 'August 22, 2026' },
-      { label: 'Shared Task Overview Papers Due', date: 'September 1, 2026' },
-      { label: 'Conference Camera-ready Deadline', date: 'September 10, 2026' },
-      { label: 'ArabicNLP 2026 / EMNLP 2026', date: 'October 24–29, 2026 (Budapest, Hungary)' },
+      {
+        label: 'Release of Task Website, Training/Dev Data & Evaluation Scripts',
+        date: 'May 16, 2026',
+        compareDate: '2026-05-16',
+      },
+      {
+        label: 'Registration Deadline & Blind Test Data Release',
+        date: 'July 20, 2026',
+        compareDate: '2026-07-20',
+      },
+      { label: 'Final Results Released', date: 'July 30, 2026', compareDate: '2026-07-30' },
+      {
+        label: 'Camera-ready System Description Papers Due',
+        date: 'August 22, 2026',
+        compareDate: '2026-08-22',
+      },
+      {
+        label: 'Shared Task Overview Papers Due',
+        date: 'September 1, 2026',
+        compareDate: '2026-09-01',
+      },
+      {
+        label: 'Conference Camera-ready Deadline',
+        date: 'September 10, 2026',
+        compareDate: '2026-09-10',
+      },
+      {
+        label: 'ArabicNLP 2026 / EMNLP 2026',
+        date: 'October 24–29, 2026 (Budapest, Hungary)',
+        compareDate: '2026-10-24',
+      },
     ],
     [],
   )
@@ -140,15 +255,18 @@ function App() {
     <>
       <section className="content-section content-section--hero" aria-label="HalluScoring introduction">
         <div className="hero__inner">
-          <p className="hero__eyebrow">HalluScoring Shared Task</p>
-          <h1 className="hero__title section-heading">LLMs Hallucination Detection in Arabic Question Answering</h1>
-          <p className="hero__date">24th October 2026, Budapest, Hungary</p>
-          <p className="hero__conference">
-            Part of the The Arabic Natural Language Processing Conference (ArabicNLP
-            2026) Co-located with EMNLP 2026
-          </p>
+          <p className="hero__eyebrow">ArabicNLP 2026  ·  EMNLP  ·  Budapest, Hungary  ·  Oct 24–29, 2026</p>
+          <h1 className="hero__title section-heading">LLM Hallucination Detection in Arabic QA</h1>
+          <button className="register-btn" onClick={() => window.open('https://forms.gle/UiaYcR6rh98SruNu8', '_blank')}>
+            Register Now!
+            <svg className="register-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
         </div>
       </section>
+
 
       <section className="content-section content-section--centered" aria-labelledby="intro-title">
         <h2 id="intro-title" className="section-heading">Overview</h2>
@@ -158,6 +276,52 @@ function App() {
         <p style={{ marginTop: '0.8rem' }}>
           HalluScoring aims to develop model-agnostic and cross-model hallucination detection techniques for LLMs in Arabic question answering. Participants are encouraged to propose methods that operate solely on input–output signals—such as self-consistency, prompting strategies, and external verification—without requiring access to model internals. A key objective is to design approaches that generalize across different LLMs and can effectively handle adversarial questions, historically grounded content, and reasoning-based queries.
         </p>
+      </section>
+
+      <br/><br/><br/><br/><br/>
+
+      <section className="content-section content-section--centered" aria-labelledby="shared-task-title">
+        <h2 id="shared-task-title" className="section-heading">Shared Task Description</h2>
+        <div className="shared-task-grid">
+          {sharedTaskDescriptionData.tracks.map((track) => (
+            <article className="shared-task-panel" key={track.title}>
+              <span className="shared-task-panel__eyebrow">{track.trackLabel}</span>
+              <h3 className="shared-task-panel__title">{track.title}</h3>
+              <p className="shared-task-panel__description">{track.description}</p>
+              <div className="shared-task-panel__actions">
+                {track.buttons.map((button) => (
+                  <a
+                    key={button.label}
+                    href={button.href}
+                    className={`shared-task-action shared-task-action--${button.variant}`}
+                  >
+                    {button.label}
+                  </a>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <br/><br/><br/><br/><br/>
+
+      <section className="content-section content-section--centered" aria-labelledby="dataset-title">
+        <h2 id="dataset-title" className="section-heading">Dataset</h2>
+        <div className="shared-task-grid">
+          {datasetDescriptionData.tracks.map((track) => (
+            <article className="shared-task-panel" key={track.title}>
+              <span className="shared-task-panel__eyebrow">{track.trackLabel}</span>
+              <h3 className="shared-task-panel__title">{track.title}</h3>
+              <p className="shared-task-panel__description">{track.description}</p>
+              {/* {track.detailsLink && (
+                <a className="dataset-link" href={track.detailsLink} target="_blank" rel="noreferrer">
+                  Google Drive folder
+                </a>
+              )} */}
+            </article>
+          ))}
+        </div>
       </section>
 
       {/* <section className="content-section" aria-labelledby="description-title">
@@ -240,17 +404,25 @@ function App() {
 
       </section> */}
 
+
+      <br/><br/><br/><br/><br/>
+
       <section className="content-section" aria-labelledby="dates-title">
         <h2 id="dates-title" className="centered section-heading heading-center-fix">Important Dates</h2>
-        <ul className="dates-list">
+        <ul className="timeline">
           {importantDates.map((item) => (
-            <li key={item.label} className="date-card">
-              <span>{item.label}</span>
-              <strong>{item.date}</strong>
+            <li key={item.label} className={`timeline-item timeline-item--${getDateStatus(item.compareDate)}`}>
+              <span className="timeline-item__marker" aria-hidden="true" />
+              <div className="timeline-item__content">
+                <span className="timeline-item__label">{item.label}</span>
+                <span className="timeline-item__date">{item.date}</span>
+              </div>
             </li>
           ))}
         </ul>
       </section>
+
+      <br/><br/><br/><br/><br/>
 
       <section className="content-section" aria-labelledby="organizers-title">
         <h2 id="organizers-title" className="centered section-heading heading-center-fix">Organizers</h2><br></br>
@@ -283,9 +455,17 @@ function App() {
         <div className="organizers-grid">
           {andalusOrganizers.map((organizer) => (
             <article className="organizer-card" key={organizer.name}>
-              <div className="organizer-avatar" aria-hidden="true">
-                {organizer.initials}
-              </div>
+              {organizer.avatar ? (
+                <img
+                  src={organizer.avatar}
+                  alt={`${organizer.name} avatar`}
+                  className="organizer-avatar-img"
+                />
+              ) : (
+                <div className="organizer-avatar" aria-hidden="true">
+                  {organizer.initials}
+                </div>
+              )}
               <h3>{organizer.name}</h3>
               <p className="organizer-affiliation">{organizer.affiliation}</p>
               {organizer.email && (
