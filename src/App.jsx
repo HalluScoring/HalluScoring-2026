@@ -74,7 +74,7 @@ function App() {
         email: 'hendk@ksu.edu.sa',
         affiliation: 'KSU, Saudi Arabia',
         initials: 'HK',
-        avatar: hendImg,
+        initials: "HA",
       },
       {
         name: 'Muhammad Abdul-Mageed',
