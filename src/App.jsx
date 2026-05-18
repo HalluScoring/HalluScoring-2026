@@ -19,7 +19,7 @@ const sharedTaskDescriptionData = {
       description:
         'Model-agnostic hallucination detection for Arabic QA using only input-output signals and robust cross-model evaluation.',
       buttons: [
-        { label: 'Starter Kit', href: '#' , variant: 'starter' },
+        { label: 'Starter Kit', href: 'https://github.com/HalluScoring/HalluScoring2026-Track1-StarterKit' , variant: 'starter' },
         { label: 'Task 1', href: '#', variant: 'task' },
         { label: 'Task 2', href: '#', variant: 'task' },
       ],
