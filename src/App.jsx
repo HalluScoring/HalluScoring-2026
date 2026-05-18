@@ -6,12 +6,16 @@ import ahmedImg from './assets/AhmedHasanaath.JPG'
 import muhammadImg from './assets/MuhammadAbdulMageed.jpg'
 import bouchImg from './assets/salah_bouch.jpg'
 import aishaImg from './assets/aisha.jpeg'
+import abdessalamImg from './assets/abdessalam.jpg'
+import nadhirImg from './assets/nadhir.jpg'
+import hichamImg from './assets/hicham.jpeg'
+import abdennourImg from './assets/abdennour.png'
 
 const sharedTaskDescriptionData = {
   tracks: [
     {
       trackLabel: 'Track 1',
-      title: 'HalluScoring',
+      title: 'Hallucination Detection',
       description:
         'Model-agnostic hallucination detection for Arabic QA using only input-output signals and robust cross-model evaluation.',
       buttons: [
@@ -22,7 +26,7 @@ const sharedTaskDescriptionData = {
     },
     {
       trackLabel: 'Track 2',
-      title: 'ANDALUS',
+      title: 'XXXX',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       buttons: [
@@ -184,7 +188,7 @@ function App() {
         name: 'Pr. Abdenour Hadid',
         email: '',
         affiliation: 'Sorbonne University, UAE',
-        initials: 'AH',
+        avatar: abdennourImg,
       },
       {
         name: 'Dr. Salah Eddine Bekhouche',
@@ -196,19 +200,19 @@ function App() {
         name: 'Dr. Abdessalam Bouchekif',
         email: '',
         affiliation: 'Hamad Bin Khalifa University, Qatar',
-        initials: 'AB',
+        avatar: abdessalamImg,
       },
       {
         name: 'Dr. Mohammed-En-Nadhir Zighem',
-        email: '',
-        affiliation: 'Huawei, Finland',
-        initials: 'MZ',
+        email: 'mohammed.en.nadhir.zighem@qutwo.com',
+        affiliation: 'Qutwo, Finland',
+        avatar: nadhirImg,
       },
       {
         name: 'Dr. Hichem Telli',
         email: '',
         affiliation: 'Huawei, Finland',
-        initials: 'HT',
+        avatar: hichamImg,
       },
     ],
     [],
@@ -297,7 +301,7 @@ function App() {
           The rapid adoption of large language models (LLMs), such as GPT and Claude, has led to increasing reliance on their outputs for tasks including question answering, content generation, and decision support. Despite their impressive abilities, LLMs are prone to hallucinations, producing fluent but factually incorrect, fabricated, or ungrounded information. This is particularly concerning in high-stakes domains such as healthcare, education, and law, where hallucinations can result in inaccurate conclusions, misinformation, and potentially harmful outcomes.
         </p>
         <p style={{ marginTop: '0.8rem' }}>
-          HalluScoring aims to develop model-agnostic and cross-model hallucination detection techniques for LLMs in Arabic question answering. Participants are encouraged to propose methods that operate solely on input–output signals—such as self-consistency, prompting strategies, and external verification—without requiring access to model internals. A key objective is to design approaches that generalize across different LLMs and can effectively handle adversarial questions, historically grounded content, and reasoning-based queries.
+          HalluScoring aims to develop model-agnostic and cross-model hallucination detection techniques for LLMs in Arabic question answering. Participants are encouraged to propose methods that operate solely on input–output signals, such as self-consistency, prompting strategies, and external verification, without requiring access to model internals. A key objective is to design approaches that generalize across different LLMs and can effectively handle adversarial questions, historically grounded content, and reasoning-based queries.
         </p>
       </section>
 
