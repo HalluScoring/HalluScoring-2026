@@ -154,7 +154,7 @@ function App() {
       },
       {
         name: 'Ahmed Abul Hasanaath',
-        email: 'g202302610@kfupm.edu.sa',
+        email: 'ahmed.ghuf@gmail.com',
         affiliation: 'Saudi Aramco, Saudi Arabia',
         initials: 'AH',
         avatar: ahmedImg,
@@ -227,15 +227,18 @@ function App() {
     () => [
       {
         label: 'Discord',
-        href: 'https://discord.com/',
+        href: 'https://discord.com/invite/G7s48MRdTq',
+        icon: 'discord',
       },
       {
-        label: 'Aisha Email',
+        label: 'Aisha (Track1 Lead)',
         href: 'mailto:aisha.ansari@kfupm.edu.sa',
+        icon: 'email',
       },
       {
-        label: 'Ahmed Email',
-        href: 'mailto:g202302610@kfupm.edu.sa',
+        label: 'Ahmed (Track2 Lead)',
+        href: 'mailto:ahmed.ghuf@gmail.com',
+        icon: 'email',
       },
     ],
     [],
@@ -389,22 +392,6 @@ function App() {
           ))}
         </div>
       </section>
-
-      {/* <section className="content-section content-section--centered stay-connected" aria-labelledby="stay-connected-title">
-        <h2 id="stay-connected-title" className="section-heading">Stay Connected</h2>
-        <article className="stay-connected__panel">
-          <p className="stay-connected__description">
-            Reach out through the community channel or email the organizers directly.
-          </p>
-          <div className="stay-connected__actions">
-            {stayConnectedLinks.map((link) => (
-              <a key={link.label} href={link.href} className="shared-task-action shared-task-action--starter">
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </article>
-      </section> */}
     </>
   )
 
@@ -419,7 +406,23 @@ function App() {
       </article>
     </section>
   )
-
+  const renderIcon = (iconType) => {
+    if (iconType === 'discord') {
+      return (
+        <svg className="stay-connected__icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.211.375-.445.865-.608 1.25a18.27 18.27 0 00-5.487 0c-.163-.39-.398-.875-.609-1.25a.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.08.08 0 00.087-.027c.461-.613.87-1.26 1.221-1.94a.077.077 0 00-.042-.107 13.1 13.1 0 01-1.872-.892.077.077 0 00-.008-.128 10.7 10.7 0 00.372-.294.075.075 0 00.076-.01 14.047 14.047 0 0012.081 0 .075.075 0 00.077.009c.12.098.246.198.372.294a.077.077 0 00-.007.127 12.299 12.299 0 01-1.873.892.076.076 0 00-.041.107c.36.68.768 1.327 1.22 1.94a.078.078 0 00.087.028 19.963 19.963 0 006.002-3.03.077.077 0 00.032-.056c.5-4.506.053-8.41-.595-12.657a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-.965-2.157-2.156 0-1.193.964-2.157 2.157-2.157 1.193 0 2.157.964 2.157 2.157 0 1.191-.964 2.156-2.157 2.156zm7.975 0c-1.183 0-2.157-.965-2.157-2.156 0-1.193.964-2.157 2.157-2.157 1.193 0 2.157.964 2.157 2.157 0 1.191-.964 2.156-2.157 2.156z"/>
+        </svg>
+      )
+    }
+    if (iconType === 'email') {
+      return (
+        <svg className="stay-connected__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+      )
+    }
+  }
   const renderMainContent = () => {
     if (activeItem === 'Paper Submission Guidelines') {
       return renderPlaceholder(
@@ -483,7 +486,25 @@ function App() {
       <main className="main-content">{renderMainContent()}</main>
 
       <footer className="site-footer">
-        <p>HalluScoring 2026 • ArabicNLP 2026 @ EMNLP 2026</p>
+        <div className="stay-connected__panel">
+          <p className="stay-connected__description">Stay Connected</p>
+          <div className="stay-connected__actions">
+            {stayConnectedLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
+                className="stay-connected__button"
+                aria-label={link.label}
+              >
+                {renderIcon(link.icon)}
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+        <p className="site-footer__copyright">HalluScoring 2026 • ArabicNLP 2026 @ EMNLP 2026</p>
       </footer>
     </div>
   )
