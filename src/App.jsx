@@ -16,22 +16,29 @@ const sharedTaskDescriptionData = {
     {
       trackLabel: 'Track 1',
       title: 'Hallucination Detection',
-      description:
-        'Model-agnostic hallucination detection for Arabic QA using only input-output signals and robust cross-model evaluation.',
+      description: [
+        'Detect hallucinations in Arabic question answering using only input–output signals; methods are evaluated for robustness and cross-model generalization.',
+        'Subtask 1: Model-Agnostic Detection — systems must generalize across different questions from the same set of LLMs. All models appear in both training and test, but the questions are disjoint.',
+        'Subtask 2: Cross-Model Detection — systems are evaluated for generalization to unseen LLM architectures: responses from a subset of models are used for training while different models are reserved for development and testing.',
+        'Note: You may participate in either subtask (or both).',
+      ],
       buttons: [
         { label: 'Starter Kit', href: 'https://github.com/HalluScoring/HalluScoring2026-Track1-StarterKit' , variant: 'starter' },
-        { label: 'Task 1', href: '#', variant: 'task' },
-        { label: 'Task 2', href: '#', variant: 'task' },
+        { label: 'Task 1', href: 'https://www.codabench.org/competitions/16496/', variant: 'task' },
+        { label: 'Task 2', href: 'https://www.codabench.org/competitions/16501/', variant: 'task' },
       ],
     },
     {
       trackLabel: 'Track 2',
-      title: 'XXXX',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      title: 'From Hallucination Detection to Truth',
+      description: [
+        'From Hallucination Detection to Truth evaluates models that move beyond hallucination detection toward reliable factual reasoning.',
+        'The track covers two domains: Islamic (~1,000 examples) and general culture (~4,000 examples). For each case, participants first judge whether the model answer hallucinates, then select the correct answer from six closely written candidates.',
+        'Candidates are intentionally similar and include subtle semantic differences, requiring careful factual verification. Teams may participate in either track.',
+      ],
       buttons: [
-        { label: 'Starter Kit', href: '#', variant: 'starter' },
-        { label: 'Task', href: '#', variant: 'task' },
+        { label: 'Starter Kit', href: 'https://github.com/zighemmohammedennadhir/Hallucination-Detection-Find-the-Truth', variant: 'starter' },
+        { label: 'Task', href: 'https://www.codabench.org/competitions/16390/', variant: 'task' },
       ],
     },
   ],
@@ -315,7 +322,37 @@ function App() {
             <article className="shared-task-panel" key={track.title}>
               <span className="shared-task-panel__eyebrow">{track.trackLabel}</span>
               <h3 className="shared-task-panel__title">{track.title}</h3>
-              <p className="shared-task-panel__description">{track.description}</p>
+              {Array.isArray(track.description) ? (
+                track.description.map((para, i) => {
+                  const baseStyle = { marginBottom: '0.75rem' }
+
+                  if (para.startsWith('Subtask 1:') || para.startsWith('Subtask 2:')) {
+                    const [label, rest] = para.split(':', 2)
+                    return (
+                      <p key={i} className="shared-task-panel__description" style={baseStyle}>
+                        <strong>{label}:</strong>
+                        {rest ? ` ${rest}` : ''}
+                      </p>
+                    )
+                  }
+
+                  if (para.startsWith('Note:')) {
+                    return (
+                      <p key={i} className="shared-task-panel__description" style={{ ...baseStyle, color: '#8b0000' }}>
+                        {para}
+                      </p>
+                    )
+                  }
+
+                  return (
+                    <p key={i} className="shared-task-panel__description" style={baseStyle}>
+                      {para}
+                    </p>
+                  )
+                })
+              ) : (
+                <p className="shared-task-panel__description">{track.description}</p>
+              )}
               <div className="shared-task-panel__actions">
                 {track.buttons.map((button) => (
                   <a
@@ -337,7 +374,7 @@ function App() {
         <div className="shared-task-grid">
           {datasetDescriptionData.tracks.map((track) => (
             <article className="shared-task-panel" key={track.title}>
-              <span className="shared-task-panel__eyebrow">{track.trackLabel}</span>
+              {/* <span className="shared-task-panel__eyebrow">{track.trackLabel}</span> */}
               <h3 className="shared-task-panel__title">{track.title}</h3>
               <p className="shared-task-panel__description">{track.description}</p>
               {/* {track.detailsLink && (
