@@ -1,0 +1,163 @@
+.shared-tasks {
+  background-color: #fffef9;
+  padding: clamp(28px, 6vw, 70px) 4vw;
+}
+
+.shared-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(12px, 1.6vw, 13px);
+  color: #9d7e54;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin: 0;
+}
+
+.section-description {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 4.5vw, 30px);
+  color: #2a2a2a;
+  margin: 0;
+  line-height: 1.12;
+}
+
+.track {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.track-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.track-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(16px, 3.2vw, 20px);
+  color: #2a2a2a;
+  margin: 0;
+}
+
+.tag-list {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.tag {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+  color: #5a5a5a;
+  padding: 6px 10px;
+}
+
+.tag-icon { display: inline-block; }
+
+.objective em {
+  color: #9d7e54;
+  font-style: italic;
+}
+
+.objective p { margin: 8px 0 0 0; color: #5a5a5a; }
+
+.subtasks { display: flex; flex-direction: column; gap: 14px; }
+
+.subtask-title {
+  font-size: clamp(14px, 3.2vw, 16px);
+  color: #9d7e54;
+}
+
+.subtask p { color: #5a5a5a; margin: 6px 0 10px 0; font-size: clamp(14px, 3.2vw, 16px); }
+
+.subtask-actions { display:flex; gap: 12px; align-items:center; }
+
+.st-btn {
+  position: relative;
+  background: #000;
+  color: #fffef9;
+  border: none;
+  padding: clamp(8px, 2.2vw, 10px) clamp(12px, 3.2vw, 16px);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(13px, 3vw, 14px);
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.st-btn:visited {
+  color: #fffef9;
+}
+
+.st-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, #9d7e54, #b89968);
+  transition: width 320ms cubic-bezier(.2,.8,.2,1);
+}
+
+.st-btn:hover::after { width: 100%; }
+
+/* divider between subtasks */
+.subtask + .subtask { border-top: 1px solid #e8dfd0; padding-top: 16px; }
+
+/* dataset tags subsection */
+.dataset-section { margin-top: 12px; }
+.dataset-title { font-size: clamp(12px, 2.2vw, 13px); color: #9d7e54; margin-bottom: 8px; }
+.dataset-tags { display:flex; gap:10px; flex-wrap:wrap; }
+.dataset-tag {
+  display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px;
+  border: 1.5px solid #9d7e54; background: #faf3e8; color: #5a5a5a; font-size:13px;
+}
+
+/* two-step boxes for Track 2 */
+.two-step { display:flex; align-items:center; gap:14px; margin-top:8px; flex-wrap:wrap; }
+.step { border:1px solid #e8dfd0; padding:12px 16px; border-radius:8px; background:#ffffff; min-width:220px; }
+.step-title { color:#9d7e54; font-size:13px; margin-bottom:6px; }
+.step-body { color:#5a5a5a; font-size:14px; }
+.arrow { font-size:28px; color:#9d7e54; }
+
+.btn-icon { opacity: 0.95; }
+
+.divider { border: none; height: 1px; background: transparent; margin: 26px 0; }
+
+@media (max-width: 768px) {
+  .shared-tasks { padding: 36px 4vw; }
+  .section-description { font-size: 22px; }
+  .track-title { font-size: 18px; }
+  .subtask-actions { flex-direction: column; align-items: stretch; }
+  .st-btn { width: 100%; justify-content: center; }
+  .btn-icon { width: 14px; height: 14px; }
+  .dataset-tags { gap:8px; }
+}
+
+@media (max-width: 480px) {
+  .shared-tasks { padding: 24px 4vw; }
+  .section-description { font-size: 20px; }
+  .track-title { font-size: 16px; }
+  .subtask-title { font-size: 15px; }
+  .subtask p { font-size: 14px; }
+  .st-btn { padding: 10px 12px; font-size: 14px; }
+  .btn-icon { width: 12px; height: 12px; }
+  .dataset-tag { padding:6px 10px; font-size:12px; }
+  .shared-container { gap: 18px; }
+}
