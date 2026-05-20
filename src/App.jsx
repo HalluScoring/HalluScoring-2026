@@ -48,7 +48,7 @@ const datasetDescriptionData = {
   tracks: [
     {
       trackLabel: 'Track 1',
-      title: 'HalluScoring Dataset',
+      title: 'HalluScore Dataset',
       description:
         'The HalluScore dataset is a structured Arabic QA benchmark with 827 curated QA pairs across health, science, finance, religion, and geography. Responses from 17 Arabic, multilingual, and reasoning LLMs are manually annotated with hallucination labels, verified evidence, answer explanations, and fine-grained metadata.',
       detailsLink: 'https://drive.google.com/drive/folders/1ElvlVJ8sz_ZwZhmyY-rrY2njzeejBWbk?usp=sharing',
