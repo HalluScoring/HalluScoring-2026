@@ -139,13 +139,6 @@ function App() {
   const organizers = useMemo(
     () => [
       {
-        name: 'Hamzah Luqman',
-        email: 'hluqman@kfupm.edu.sa',
-        affiliation: 'KFUPM, Saudi Arabia',
-        initials: 'HL',
-        avatar: hamzahImg,
-      },
-      {
         name: 'Aisha Alansari',
         email: 'aisha.ansari@kfupm.edu.sa',
         affiliation: 'KFUPM, Saudi Arabia',
@@ -153,7 +146,14 @@ function App() {
         avatar: aishaImg,
       },
       {
-        name: 'Saad Ezzini',
+        name: 'Dr. Hamzah Luqman',
+        email: 'hluqman@kfupm.edu.sa',
+        affiliation: 'KFUPM, Saudi Arabia',
+        initials: 'HL',
+        avatar: hamzahImg,
+      },
+      {
+        name: 'Dr. Saad Ezzini',
         email: 'saad.ezzini@kfupm.edu.sa',
         affiliation: 'KFUPM, Saudi Arabia',
         initials: 'SE',
@@ -173,13 +173,13 @@ function App() {
         initials: 'MA',
       },
       {
-        name: 'Hend Al-Khalifa',
+        name: 'Dr. Hend Al-Khalifa',
         email: 'hendk@ksu.edu.sa',
         affiliation: 'KSU, Saudi Arabia',
         initials: "HA",
       },
       {
-        name: 'Muhammad Abdul-Mageed',
+        name: 'Dr. Muhammad Abdul-Mageed',
         email: 'muhammad.mageed@ubc.ca',
         affiliation: 'UBC, Canada',
         initials: 'MM',
