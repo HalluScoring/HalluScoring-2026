@@ -98,8 +98,8 @@ export default function Organizers() {
       },
       {
         name: 'Dr. Hichem Telli',
-        email: 'halluscoring@gmail.com',
-        affiliation: 'Huawei, Finland',
+        email: 'tellihicham@univ-biskra.dz',
+        affiliation: 'University of Biskra',
         initials: 'HT',
         avatar: hichamImg,
       },
