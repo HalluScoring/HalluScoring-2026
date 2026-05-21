@@ -70,7 +70,7 @@ export default function Organizers() {
     () => [
       {
         name: 'Pr. Abdenour Hadid',
-        email: '',
+        email: 'abdenour.hadid@ieee.org',
         affiliation: 'Sorbonne University, UAE',
         initials: 'AH',
         avatar: abdennourImg,
@@ -84,7 +84,7 @@ export default function Organizers() {
       },
       {
         name: 'Dr. Abdessalam Bouchekif',
-        email: '',
+        email: 'abouchekif@hbku.edu.qa',
         affiliation: 'Hamad Bin Khalifa University, Qatar',
         initials: 'AB',
         avatar: abdessalamImg,
@@ -98,7 +98,7 @@ export default function Organizers() {
       },
       {
         name: 'Dr. Hichem Telli',
-        email: 'halluscoring@algerian.ai',
+        email: 'halluscoring@gmail.com',
         affiliation: 'Huawei, Finland',
         initials: 'HT',
         avatar: hichamImg,

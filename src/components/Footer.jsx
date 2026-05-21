@@ -10,13 +10,13 @@ export default function Footer() {
         icon: 'discord',
       },
       {
-        label: 'Aisha (Track1 Lead)',
+        label: 'Aisha - Track 1',
         href: 'mailto:aisha.ansari@kfupm.edu.sa',
         icon: 'email',
       },
       {
-        label: 'Hichem (Track2 Lead)',
-        href: 'mailto:halluscoring@algerian.ai',
+        label: 'Hichem - Track 2',
+        href: 'mailto:halluscoring@gmail.com',
         icon: 'email',
       },
     ],
