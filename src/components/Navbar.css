@@ -57,3 +57,24 @@
   border-radius: 4px;
   border-bottom: 3px solid #9d7e54;
 }
+
+/* Responsive: hide nav items and center title when width < 850px */
+@media (max-width: 849px) {
+  .navbar-container {
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+  .navbar-title {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .navbar {
+    padding: 16px 0;
+  }
+}

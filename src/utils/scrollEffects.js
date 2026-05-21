@@ -1,10 +1,12 @@
 export function initRevealOnScroll() {
   if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return
 
+  const isSmall = window.innerWidth <= 850
   const options = {
     root: null,
-    rootMargin: '0px 0px -8% 0px',
-    threshold: 0.4,
+    // On small screens, make the observer more lenient so sections reveal reliably
+    rootMargin: isSmall ? '0px 0px -30% 0px' : '0px 0px -8% 0px',
+    threshold: isSmall ? 0.12 : 0.4,
   }
 
   const revealObserver = new IntersectionObserver((entries, obs) => {
@@ -43,5 +45,23 @@ export function initRevealOnScroll() {
     })
 
     revealObserver.observe(el)
+
+    // If the element is already sufficiently visible (edge cases on mobile), reveal immediately
+    try {
+      const rect = el.getBoundingClientRect()
+      const vh = window.innerHeight || document.documentElement.clientHeight
+      const visibleHeight = Math.min(rect.bottom, vh) - Math.max(rect.top, 0)
+      const visibleRatio = rect.height > 0 ? visibleHeight / rect.height : 0
+      if (visibleRatio >= options.threshold) {
+        el.classList.add('reveal')
+        el.classList.remove('reveal-hidden')
+        Array.from(el.children).forEach((child) => {
+          child.style.transitionDelay = ''
+        })
+        revealObserver.unobserve(el)
+      }
+    } catch (e) {
+      // ignore measurement errors
+    }
   })
 }
