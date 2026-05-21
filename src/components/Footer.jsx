@@ -15,8 +15,8 @@ export default function Footer() {
         icon: 'email',
       },
       {
-        label: 'Ahmed (Track2 Lead)',
-        href: 'mailto:ahmed.ghuf@gmail.com',
+        label: 'Hichem (Track2 Lead)',
+        href: 'mailto:halluscoring@algerian.ai',
         icon: 'email',
       },
     ],

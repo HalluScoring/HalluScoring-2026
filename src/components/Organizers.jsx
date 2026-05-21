@@ -98,7 +98,7 @@ export default function Organizers() {
       },
       {
         name: 'Dr. Hichem Telli',
-        email: '',
+        email: 'halluscoring@algerian.ai',
         affiliation: 'Huawei, Finland',
         initials: 'HT',
         avatar: hichamImg,

@@ -37,7 +37,7 @@ export default function SharedTasks() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <svg className="btn-icon" viewBox="0 0 24 24" width="14" height="14" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="M10 17l5-5-5-5v10z"/></svg>
+                  <svg className="btn-icon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="M10 17l5-5-5-5v10z"/></svg>
                   Go to task
                 </a>
               </div>
@@ -62,7 +62,7 @@ export default function SharedTasks() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <svg className="btn-icon" viewBox="0 0 24 24" width="14" height="14" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="M10 17l5-5-5-5v10z"/></svg>
+                  <svg className="btn-icon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="M10 17l5-5-5-5v10z"/></svg>
                   Go to task
                 </a>
               </div>
@@ -111,7 +111,7 @@ export default function SharedTasks() {
                   href="https://www.codabench.org/competitions/16390/"
                   target="_blank"
                   rel="noreferrer"
-                ><svg className="btn-icon" viewBox="0 0 24 24" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M10 17l5-5-5-5v10z"/></svg> Go to task</a>
+                ><svg className="btn-icon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M10 17l5-5-5-5v10z"/></svg> Go to task</a>
               </div>
             </div>
           </div>
