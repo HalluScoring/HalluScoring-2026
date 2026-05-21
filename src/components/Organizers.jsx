@@ -77,7 +77,7 @@ export default function Organizers() {
       },
       {
         name: 'Dr. Salah Eddine Bekhouche',
-        email: '',
+        email: 'sbekhouche001@ikasle.ehu.eus',
         affiliation: 'University of the Basque Country, Spain',
         initials: 'SB',
         avatar: bouchImg,
