@@ -11,8 +11,10 @@ export default function Hero() {
   return (
     <section className="hero reveal-on-scroll" id="hero">
       <div className="hero-container">
-        <div className="hero-tag-box">
-          ArabicNLP 2026 · EMNLP · Budapest, Hungary · Oct 24–29, 2026
+        <div className="hero-branding" aria-label="HalluScoring branding">
+          <p className="hero-brand-kicker">ArabicNLP Shared Task</p>
+          <p className="hero-brand-name">HalluScoring</p>
+          <p className="hero-brand-edition">1st edition . 2026</p>
         </div>
 
         <h1 className="hero-title">LLM Hallucination Detection in Arabic QA</h1>
@@ -34,7 +36,7 @@ export default function Hero() {
         <div className="hero-info-grid">
           <div className="info-item">
             <div className="info-label">Conference</div>
-            <div className="info-value">EMNLP 2026</div>
+            <div className="info-value">ArabicNLP 2026</div>
           </div>
           <div className="info-item">
             <div className="info-label">Dates</div>

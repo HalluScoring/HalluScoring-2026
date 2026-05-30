@@ -1,6 +1,20 @@
 .shared-tasks {
-  background-color: #fffef9;
-  padding: clamp(28px, 6vw, 70px) 4vw;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(157, 126, 84, 0.14), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(187, 152, 104, 0.12), transparent 28%),
+    linear-gradient(180deg, #fffef9 0%, #fcf7ee 100%);
+  padding: clamp(32px, 6vw, 78px) 4vw;
+}
+
+.shared-tasks::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(157, 126, 84, 0.12);
+  border-radius: 28px;
+  pointer-events: none;
 }
 
 .shared-container {
@@ -8,12 +22,14 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 18px;
+  position: relative;
+  z-index: 1;
 }
 
 .section-heading {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(12px, 1.6vw, 13px);
+  font-size: clamp(13px, 1.8vw, 14px);
   color: #9d7e54;
   text-transform: uppercase;
   letter-spacing: 1.2px;
@@ -22,16 +38,30 @@
 
 .section-description {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(18px, 4.5vw, 30px);
+  font-size: clamp(24px, 5vw, 40px);
   color: #2a2a2a;
   margin: 0;
-  line-height: 1.12;
+  line-height: 1.08;
+  max-width: 14ch;
+}
+
+.section-kicker {
+  max-width: 58ch;
+  margin: 0;
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.65;
+  color: #5a5a5a;
 }
 
 .track {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid rgba(157, 126, 84, 0.14);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, rgba(250, 243, 232, 0.92) 100%);
+  box-shadow: 0 18px 40px rgba(51, 39, 20, 0.06);
 }
 
 .track-header {
@@ -42,9 +72,10 @@
 
 .track-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(16px, 3.2vw, 20px);
+  font-size: clamp(20px, 3.8vw, 26px);
   color: #2a2a2a;
   margin: 0;
+  font-weight: 400;
 }
 
 .tag-list {
@@ -67,18 +98,24 @@
 .objective em {
   color: #9d7e54;
   font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.02em;
 }
 
-.objective p { margin: 8px 0 0 0; color: #5a5a5a; }
+.objective p { margin: 8px 0 0 0; color: #5a5a5a; font-size: clamp(15px, 2vw, 17px); line-height: 1.7; }
 
 .subtasks { display: flex; flex-direction: column; gap: 14px; }
 
 .subtask-title {
-  font-size: clamp(14px, 3.2vw, 16px);
+  font-size: clamp(16px, 2.8vw, 18px);
   color: #9d7e54;
+  line-height: 1.35;
 }
 
-.subtask p { color: #5a5a5a; margin: 6px 0 10px 0; font-size: clamp(14px, 3.2vw, 16px); }
+.subtask p { color: #5a5a5a; margin: 6px 0 10px clamp(12px, 2.2vw, 18px); font-size: clamp(15px, 2.8vw, 17px); line-height: 1.7; }
+
+/* indent action buttons to align with subtask body */
+.subtask .subtask-actions { margin-left: clamp(12px, 2.2vw, 18px); }
 
 .subtask-actions { display:flex; gap: 12px; align-items:center; }
 
@@ -98,6 +135,7 @@
   border-radius: 8px;
   text-decoration: none;
   justify-content: center;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
 .st-btn:visited {
@@ -117,16 +155,21 @@
 
 .st-btn:hover::after { width: 100%; }
 
+.st-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(51, 39, 20, 0.12);
+}
+
 /* divider between subtasks */
 .subtask + .subtask { border-top: 1px solid #e8dfd0; padding-top: 16px; }
 
 /* dataset tags subsection */
 .dataset-section { margin-top: 12px; }
-.dataset-title { font-size: clamp(12px, 2.2vw, 13px); color: #9d7e54; margin-bottom: 8px; }
+.dataset-title { font-size: clamp(13px, 2.4vw, 14px); color: #9d7e54; margin-bottom: 8px; letter-spacing: 0.02em; }
 .dataset-tags { display:flex; gap:10px; flex-wrap:wrap; }
 .dataset-tag {
   display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px;
-  border: 1.5px solid #9d7e54; background: #faf3e8; color: #5a5a5a; font-size:13px;
+  border: 1.5px solid #9d7e54; background: #faf3e8; color: #5a5a5a; font-size:14px;
 }
 
 /* two-step boxes for Track 2 */
@@ -142,8 +185,11 @@
 
 @media (max-width: 768px) {
   .shared-tasks { padding: 36px 4vw; }
-  .section-description { font-size: 22px; }
-  .track-title { font-size: 18px; }
+  .shared-tasks::before { inset: 10px; border-radius: 22px; }
+  .section-description { font-size: 28px; max-width: none; }
+  .section-kicker { font-size: 16px; }
+  .track { padding: 18px; border-radius: 20px; }
+  .track-title { font-size: 22px; }
   .subtask-actions { flex-direction: column; align-items: stretch; }
   .st-btn { width: 100%; justify-content: center; }
   .btn-icon { width: 14px; height: 14px; }
@@ -152,12 +198,14 @@
 
 @media (max-width: 480px) {
   .shared-tasks { padding: 24px 4vw; }
-  .section-description { font-size: 20px; }
-  .track-title { font-size: 16px; }
-  .subtask-title { font-size: 15px; }
-  .subtask p { font-size: 14px; }
+  .shared-tasks::before { inset: 8px; }
+  .section-description { font-size: 24px; }
+  .section-kicker { font-size: 15px; }
+  .track-title { font-size: 19px; }
+  .subtask-title { font-size: 16px; }
+  .subtask p { font-size: 15px; }
   .st-btn { padding: 10px 12px; font-size: 14px; }
   .btn-icon { width: 12px; height: 12px; }
   .dataset-tag { padding:6px 10px; font-size:12px; }
-  .shared-container { gap: 18px; }
+  .shared-container { gap: 16px; }
 }

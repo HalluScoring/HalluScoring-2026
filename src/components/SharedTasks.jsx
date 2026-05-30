@@ -5,21 +5,22 @@ export default function SharedTasks() {
     <section className="shared-tasks reveal-on-scroll" id="shared-tasks">
       <div className="shared-container">
         <h2 className="section-heading">Shared tasks</h2>
-        <h3 className="section-description" style={{fontWeight: "lighter"}}>Two tracks, three subtasks</h3>
+        <h3 className="section-description">Two tracks, three subtasks</h3>
+        <p className="section-kicker">Two distinct evaluation paths, each with its own rhythm and submission flow.</p>
 
         <div className="track">
           <div className="track-header">
-            <h4 className="track-title" style={{fontWeight: "lighter"}}>Track 1 — Hallucination Detection</h4>
+            <h4 className="track-title">Track 1 — Hallucination Detection</h4>
           </div>
 
           <div className="objective">
             <em>Objective</em>
-            <p>Detect hallucinations in Arabic question answering using only input–output pairs. No access to internal model states, logits, or generation metadata.</p>
+            <p>Detect hallucinations in Arabic question answering using only input–output pairs.</p>
           </div>
 
           <div className="subtasks">
             <div className="subtask">
-              <div className="subtask-title">Track 1.1 — Generalize across questions</div>
+              <div className="subtask-title">Task 1.1 — Generalize across questions</div>
               <p>Systems must generalize across different questions drawn from the same set of LLMs. All model architectures appear in both training and test splits, but the questions are completely disjoint.</p>
               <div className="subtask-actions">
                 <a
@@ -44,7 +45,7 @@ export default function SharedTasks() {
             </div>
 
             <div className="subtask">
-              <div className="subtask-title">Track 1.2 — Generalize across models</div>
+              <div className="subtask-title">Task 1.2 — Generalize across models</div>
               <p>Systems are evaluated on their ability to generalize to entirely unseen LLM architectures, which do not appear in the training data.</p>
               <div className="subtask-actions">
                 <a
@@ -83,17 +84,17 @@ export default function SharedTasks() {
 
         <div className="track">
           <div className="track-header">
-            <h4 className="track-title" style={{fontWeight: "lighter"}}>Track 2 — From Hallucination Detection to Truth</h4>
+            <h4 className="track-title">Track 2 — From Hallucination Detection to Truth</h4>
           </div>
 
           <div className="objective">
             <em>Objective</em>
-            <p>Evaluate models that move beyond hallucination detection toward reliable factual reasoning across Islamic and general culture domains.</p>
+            <p>Given a question and an LLM-generated answer, the model must decide whether the answer is hallucinated. Then, it must select the correct answer from six very similar options, written in the same style as the LLM-generated answer. The goal is to build models that can detect hallucinations and choose the correct answer among close and confusing options.</p>
           </div>
 
           <div className="subtasks">
             <div className="subtask">
-              <div className="subtask-title">Track 2.1 — Two-step evaluation</div>
+              <div className="subtask-title">Task 2.1 — Two-step evaluation</div>
               <p>Step 1: Given a question and an LLM-generated answer, determine whether the answer contains a hallucination — a binary yes/no decision.
               <br />Step 2: Correct Answer Selection — select the correct answer from six closely written candidates.</p>
               <div className="subtask-actions">

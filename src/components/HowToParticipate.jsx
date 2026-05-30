@@ -35,14 +35,14 @@ export default function HowToParticipate() {
             <div className="card-link"><span className="link-underline">Submit via CodaLab</span></div>
           </div>
 
-          <div className="card">
+          {/* <div className="card">
             <div className="card-top">
               <div className="card-number">3</div>
               <div className="card-title">Write your paper</div>
             </div>
             <div className="card-body">Prepare a short paper describing your approach. Submission guidelines will be released soon.</div>
             <div className="card-link"><a href="#" className="link-underline">guidelines TBA</a></div>
-          </div>
+          </div> */}
         </div>
 
         <p className="contact">For questions, contact the organizers</p>
