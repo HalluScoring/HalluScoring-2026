@@ -115,7 +115,83 @@
 .subtask p { color: #5a5a5a; margin: 6px 0 10px clamp(12px, 2.2vw, 18px); font-size: clamp(15px, 2.8vw, 17px); line-height: 1.7; }
 
 /* indent action buttons to align with subtask body */
-.subtask .subtask-actions { margin-left: clamp(12px, 2.2vw, 18px); }
+.subtask .subtask-actions { margin-left: clamp(12px, 2.2vw, 18px); margin-top: 14px; }
+
+/* table shown inside subtasks */
+.subtask-table {
+  width: 100%;
+  margin: 8px 0 14px 0;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: #5a5a5a;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(51, 39, 20, 0.04);
+}
+.subtask-table thead th {
+  text-align: left;
+  padding: 10px 12px;
+  background: #faf3e8;
+  color: #9d7e54;
+  font-weight: 600;
+  font-size: 13px;
+  border-bottom: 1px solid #efe6d8;
+}
+.subtask-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f1eadc;
+}
+.subtask-table tbody tr:last-child td { border-bottom: none; }
+
+@media (max-width: 480px) {
+  .subtask-table { font-size: 13px; margin-left: 0; }
+}
+
+/* dataset stats subsection (similar to objective) */
+.dataset-stats em {
+  color: #9d7e54;
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  display: block;
+  margin-bottom: 8px;
+}
+.dataset-stats { margin-left: 0; }
+
+/* evaluation metrics subsection */
+.evaluation-metrics em {
+  color: #9d7e54;
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  display: block;
+  margin-bottom: 8px;
+}
+.metrics-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 6px 12px rgba(51,39,20,0.03);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 14px;
+  color: #5a5a5a;
+}
+.metrics-table thead th {
+  text-align: left;
+  padding: 8px 12px;
+  background: #faf3e8;
+  color: #9d7e54;
+  font-weight: 600;
+  font-size: 13px;
+  border-bottom: 1px solid #efe6d8;
+}
+.metrics-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #f6f1e6;
+}
+.metrics-table tbody tr:last-child td { border-bottom: none; }
 
 .subtask-actions { display:flex; gap: 12px; align-items:center; }
 

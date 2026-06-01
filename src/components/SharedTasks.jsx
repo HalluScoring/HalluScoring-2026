@@ -22,6 +22,64 @@ export default function SharedTasks() {
             <div className="subtask">
               <div className="subtask-title">Task 1.1 — Generalize across questions</div>
               <p>Systems must generalize across different questions drawn from the same set of LLMs. All model architectures appear in both training and test splits, but the questions are completely disjoint.</p>
+              <div className="dataset-stats">
+                <em>Dataset stats</em>
+                <table className="subtask-table" role="table" aria-label="Task 1.1 dataset splits">
+                <thead>
+                  <tr>
+                    <th>Split</th>
+                    <th>Instances</th>
+                    <th>Questions</th>
+                    <th>Models</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Train</td>
+                    <td>4,103</td>
+                    <td>2,103</td>
+                    <td>5 (Seen)</td>
+                  </tr>
+                  <tr>
+                    <td>Dev</td>
+                    <td>1,405</td>
+                    <td>721</td>
+                    <td>5 (Seen)</td>
+                  </tr>
+                  <tr>
+                    <td>Test</td>
+                    <td>1,030</td>
+                    <td>206</td>
+                    <td>5 (Seen)</td>
+                  </tr>
+                </tbody>
+                </table>
+              </div>
+              <div className="evaluation-metrics">
+                <em>Evaluation metrics</em>
+                <table className="metrics-table" role="table" aria-label="Task 1.1 evaluation metrics">
+                  <thead>
+                    <tr>
+                      <th>Metric</th>
+                      <th>Role</th>
+                      <th>What It Measures</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>AUC-ROC</td>
+                      <td>Primary · Ranking</td>
+                      <td>The model's ability to discriminate between hallucinated and non-hallucinated instances across all classification thresholds. Range: 0.5 (random) → 1.0 (perfect).</td>
+                    </tr>
+                    <tr>
+                      <td>Macro F1-score</td>
+                      <td>Secondary · Diagnostic</td>
+                      <td>Unweighted average of F1 for each class. Treats both classes equally regardless of frequency — penalizes systems that ignore the minority class.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <br></br>
               <div className="subtask-actions">
                 <a
                   className="st-btn"
@@ -47,6 +105,68 @@ export default function SharedTasks() {
             <div className="subtask">
               <div className="subtask-title">Task 1.2 — Generalize across models</div>
               <p>Systems are evaluated on their ability to generalize to entirely unseen LLM architectures, which do not appear in the training data.</p>
+              <div className="dataset-stats">
+                <em>Dataset stats</em>
+                <table className="subtask-table" role="table" aria-label="Task 1.2 dataset splits">
+                <thead>
+                  <tr>
+                    <th>Split</th>
+                    <th>Instances</th>
+                    <th>Questions</th>
+                    <th>Models</th>
+                    <th>Model Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Train</td>
+                    <td>2,500</td>
+                    <td>500</td>
+                    <td>5</td>
+                    <td>Seen</td>
+                  </tr>
+                  <tr>
+                    <td>Dev</td>
+                    <td>242</td>
+                    <td>121</td>
+                    <td>2</td>
+                    <td>Unseen</td>
+                  </tr>
+                  <tr>
+                    <td>Test</td>
+                    <td>412</td>
+                    <td>206</td>
+                    <td>2</td>
+                    <td>Unseen (different)</td>
+                  </tr>
+                </tbody>
+                </table>
+              </div>
+              <div className="evaluation-metrics">
+                <em>Evaluation metrics</em>
+                <table className="metrics-table" role="table" aria-label="Task 1.2 evaluation metrics">
+                  <thead>
+                    <tr>
+                      <th>Metric</th>
+                      <th>Role</th>
+                      <th>What It Measures</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>AUC-ROC</td>
+                      <td>Primary · Ranking</td>
+                      <td>The model's ability to discriminate between hallucinated and non-hallucinated instances across all classification thresholds. Range: 0.5 (random) → 1.0 (perfect).</td>
+                    </tr>
+                    <tr>
+                      <td>Macro F1-score</td>
+                      <td>Secondary · Diagnostic</td>
+                      <td>Unweighted average of F1 for each class. Treats both classes equally regardless of frequency — penalizes systems that ignore the minority class.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <br></br>
               <div className="subtask-actions">
                 <a
                   className="st-btn"
