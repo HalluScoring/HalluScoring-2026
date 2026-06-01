@@ -216,6 +216,62 @@ export default function SharedTasks() {
             <div className="subtask">
               <div className="subtask-title">Task 2.1 — Islamic Knowledge</div>
               <p>Questions related to Islamic knowledge, including beliefs, Islamic history, Islamic law, religious concepts, terminology, and authoritative Islamic sources.</p>
+              <div className="dataset-stats">
+                <em>Dataset stats</em>
+                <table className="subtask-table" role="table" aria-label="Task 2.1 dataset splits">
+                  <thead>
+                    <tr>
+                      <th>Split</th>
+                      <th>Number of Examples</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Train</td>
+                      <td>400</td>
+                    </tr>
+                    <tr>
+                      <td>Development (Dev)</td>
+                      <td>200</td>
+                    </tr>
+                    <tr>
+                      <td>Test</td>
+                      <td>400</td>
+                    </tr>
+                    <tr>
+                      <td>Total</td>
+                      <td>1,000 examples</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="evaluation-metrics">
+                <em>Evaluation metrics</em>
+                <table className="metrics-table" role="table" aria-label="Task 2.1 evaluation metrics">
+                  <thead>
+                    <tr>
+                      <th>Step</th>
+                      <th>Metric</th>
+                      <th>Weight</th>
+                      <th>What It Measures</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Step 1: Hallucination Detection</td>
+                      <td>Macro F1-Score</td>
+                      <td>0.4</td>
+                      <td>Ability to classify answers as no-hallucinate or hallucination.</td>
+                    </tr>
+                    <tr>
+                      <td>Step 2: Find the Truth</td>
+                      <td>Accuracy</td>
+                      <td>0.6</td>
+                      <td>Ability to select the correct option from A–F.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
               <div className="subtask-actions">
                 <a
                   className="st-btn"
@@ -241,6 +297,62 @@ export default function SharedTasks() {
             <div className="subtask">
               <div className="subtask-title">Task 2.2 — General Culture</div>
               <p>Questions covering broad general knowledge domains, including geography, science, history, and Islamic culture.</p>
+              <div className="dataset-stats">
+                <em>Dataset stats</em>
+                <table className="subtask-table" role="table" aria-label="Task 2.2 dataset splits">
+                  <thead>
+                    <tr>
+                      <th>Split</th>
+                      <th>Number of Examples</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Train</td>
+                      <td>400</td>
+                    </tr>
+                    <tr>
+                      <td>Development (Dev)</td>
+                      <td>200</td>
+                    </tr>
+                    <tr>
+                      <td>Test</td>
+                      <td>400</td>
+                    </tr>
+                    <tr>
+                      <td>Total</td>
+                      <td>1,000 examples</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="evaluation-metrics">
+                <em>Evaluation metrics</em>
+                <table className="metrics-table" role="table" aria-label="Task 2.2 evaluation metrics">
+                  <thead>
+                    <tr>
+                      <th>Step</th>
+                      <th>Metric</th>
+                      <th>Weight</th>
+                      <th>What It Measures</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Step 1: Hallucination Detection</td>
+                      <td>Macro F1-Score</td>
+                      <td>0.4</td>
+                      <td>Ability to classify answers as no-hallucinate or hallucination.</td>
+                    </tr>
+                    <tr>
+                      <td>Step 2: Find the Truth</td>
+                      <td>Accuracy</td>
+                      <td>0.6</td>
+                      <td>Ability to select the correct option from A–F.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
               <div className="subtask-actions">
                 <a
                   className="st-btn"

@@ -5,8 +5,8 @@ export function initRevealOnScroll() {
   const options = {
     root: null,
     // On small screens, make the observer more lenient so sections reveal reliably
-    rootMargin: isSmall ? '0px 0px -30% 0px' : '0px 0px -8% 0px',
-    threshold: isSmall ? 0.12 : 0.4,
+    rootMargin: isSmall ? '0px 0px -20% 0px' : '0px 0px -8% 0px',
+    threshold: isSmall ? 0.01 : 0.01,
   }
 
   const revealObserver = new IntersectionObserver((entries, obs) => {
@@ -51,8 +51,7 @@ export function initRevealOnScroll() {
       const rect = el.getBoundingClientRect()
       const vh = window.innerHeight || document.documentElement.clientHeight
       const visibleHeight = Math.min(rect.bottom, vh) - Math.max(rect.top, 0)
-      const visibleRatio = rect.height > 0 ? visibleHeight / rect.height : 0
-      if (visibleRatio >= options.threshold) {
+      if (visibleHeight > 0) {
         el.classList.add('reveal')
         el.classList.remove('reveal-hidden')
         Array.from(el.children).forEach((child) => {
