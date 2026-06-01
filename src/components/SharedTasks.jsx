@@ -5,7 +5,7 @@ export default function SharedTasks() {
     <section className="shared-tasks reveal-on-scroll" id="shared-tasks">
       <div className="shared-container">
         <h2 className="section-heading">Shared tasks</h2>
-        <h3 className="section-description">Two tracks, three subtasks</h3>
+        <h3 className="section-description">Two tracks, four subtasks</h3>
         <p className="section-kicker">Two distinct evaluation paths, each with its own rhythm and submission flow.</p>
 
         <div className="track">
@@ -94,9 +94,33 @@ export default function SharedTasks() {
 
           <div className="subtasks">
             <div className="subtask">
-              <div className="subtask-title">Task 2.1 — Two-step evaluation</div>
-              <p>Step 1: Given a question and an LLM-generated answer, determine whether the answer contains a hallucination — a binary yes/no decision.
-              <br />Step 2: Correct Answer Selection — select the correct answer from six closely written candidates.</p>
+              <div className="subtask-title">Task 2.1 — Islamic Knowledge</div>
+              <p>Questions related to Islamic knowledge, including beliefs, Islamic history, Islamic law, religious concepts, terminology, and authoritative Islamic sources.</p>
+              <div className="subtask-actions">
+                <a
+                  className="st-btn"
+                  href="https://github.com/zighemmohammedennadhir/Hallucination-Detection-Find-the-Truth"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg className="btn-icon" viewBox="0 0 24 24" width="14" height="14" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  Starter Kit
+                </a>
+                <a
+                  className="st-btn"
+                  href="https://www.codabench.org/competitions/16792/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg className="btn-icon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M10 17l5-5-5-5v10z"/></svg>
+                  Go to task
+                </a>
+              </div>
+            </div>
+
+            <div className="subtask">
+              <div className="subtask-title">Task 2.2 — General Culture</div>
+              <p>Questions covering broad general knowledge domains, including geography, science, history, and Islamic culture.</p>
               <div className="subtask-actions">
                 <a
                   className="st-btn"
@@ -112,7 +136,10 @@ export default function SharedTasks() {
                   href="https://www.codabench.org/competitions/16390/"
                   target="_blank"
                   rel="noreferrer"
-                ><svg className="btn-icon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M10 17l5-5-5-5v10z"/></svg> Go to task</a>
+                >
+                  <svg className="btn-icon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M10 17l5-5-5-5v10z"/></svg>
+                  Go to task
+                </a>
               </div>
             </div>
           </div>
