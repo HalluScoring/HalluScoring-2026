@@ -105,6 +105,19 @@
 
 .objective p { margin: 8px 0 0 0; color: #5a5a5a; font-size: clamp(15px, 2vw, 17px); line-height: 1.7; }
 
+/* styled input/output note for Track 1 */
+.objective .io-sentence {
+  margin-top: 10px;
+  display: block;
+  background: linear-gradient(90deg, rgba(157,126,84,0.06), rgba(157,126,84,0.02));
+  border-left: 3px solid #9d7e54;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #3f3f3f;
+  font-size: clamp(14px, 1.9vw, 15px);
+  line-height: 1.6;
+}
+
 .subtasks { display: flex; flex-direction: column; gap: 14px; }
 
 .subtask-title {
