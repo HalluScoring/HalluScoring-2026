@@ -309,19 +309,19 @@ export default function SharedTasks() {
                   <tbody>
                     <tr>
                       <td>Train</td>
-                      <td>400</td>
+                      <td>1600</td>
                     </tr>
                     <tr>
                       <td>Development (Dev)</td>
-                      <td>200</td>
+                      <td>800</td>
                     </tr>
                     <tr>
                       <td>Test</td>
-                      <td>400</td>
+                      <td>1600</td>
                     </tr>
                     <tr>
                       <td>Total</td>
-                      <td>1,000 examples</td>
+                      <td>4,000 examples</td>
                     </tr>
                   </tbody>
                 </table>
