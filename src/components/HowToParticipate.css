@@ -12,6 +12,10 @@
 .card-body { color:#5a5a5a; flex:1; }
 .card-link { margin-top:6px; }
 .link-underline { text-decoration: underline; color: #2a2a2a; }
+.submission-rules { margin-top: 36px; display: flex; flex-direction: column; gap: 20px; }
+.rules-heading { font-family: 'Playfair Display', serif; font-size: 16px; color: #9d7e54; text-transform: uppercase; letter-spacing: 1px; margin: 0; border-bottom: 1px solid #e8d9c4; padding-bottom: 8px; }
+.rules-list { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; color: #5a5a5a; line-height: 1.6; }
+.rules-list li { padding-left: 4px; }
 .contact { color:#5a5a5a; margin-top:10px; text-align:center; font-size:13px; }
 
 @media (max-width: 900px) { .participate-grid { flex-direction:column; } .card { min-height: auto; } }
