@@ -37,14 +37,14 @@ export default function SharedTasks() {
                 <tbody>
                   <tr>
                     <td>Train</td>
-                    <td>4,103</td>
-                    <td>2,103</td>
+                    <td>4,705</td>
+                    <td>2,221</td>
                     <td>5 (Seen)</td>
                   </tr>
                   <tr>
                     <td>Dev</td>
-                    <td>1,405</td>
-                    <td>721</td>
+                    <td>1,300</td>
+                    <td>900</td>
                     <td>5 (Seen)</td>
                   </tr>
                   <tr>
@@ -121,17 +121,17 @@ export default function SharedTasks() {
                 <tbody>
                   <tr>
                     <td>Train</td>
-                    <td>2,500</td>
-                    <td>500</td>
+                    <td>4,705</td>
+                    <td>2,221</td>
                     <td>5</td>
                     <td>Seen</td>
                   </tr>
                   <tr>
                     <td>Dev</td>
-                    <td>242</td>
-                    <td>121</td>
+                    <td>200</td>
+                    <td>100</td>
                     <td>2</td>
-                    <td>Unseen</td>
+                    <td>Unseen (different)</td>
                   </tr>
                   <tr>
                     <td>Test</td>
